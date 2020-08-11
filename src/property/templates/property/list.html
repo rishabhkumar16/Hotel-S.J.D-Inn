@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+  <!-- END: header -->
+  <section class="probootstrap-slider flexslider2 page-inner">
+    <div class="overlay"></div>
+    <div class="probootstrap-wrap-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+
+            <div class="page-title probootstrap-animate">
+              <div class="probootstrap-breadcrumbs">
+                <a href="#">Home</a><span>Properties</span>
+              </div>
+              <h1>Properties</h1>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="slides">
+      <li style="background-image: url(img/slider_1.jpg);"></li>
+      <li style="background-image: url(img/slider_4.jpg);"></li>
+      <li style="background-image: url(img/slider_2.jpg);"></li>
+    </ul>
+  </section>
+  <!-- END: slider  -->
+
+  <section class="probootstrap-section probootstrap-section-lighter">
+    <div class="container">
+      <div class="row">
+        {% for property in property_list %}
+
+        <div class="col-md-4 col-sm-6">
+          <div class="probootstrap-card probootstrap-listing">
+            <div class="probootstrap-card-media">
+              <img src="{{property.image.url}}" class="img-responsive" alt="Free HTML5 Template by uicookies.com">
+            </div>
+            <div class="probootstrap-card-text">
+              <h2 class="probootstrap-card-heading"><a href="{% url 'property:property_detail' property.id %}">{{property}}</a></h2>
+              <div class="probootstrap-listing-location">
+                <i class="icon-location2"></i> <span>Hotel SJD Inn, Infront ETAH Club, G T Road, Etah, Uttar Pradesh-207001 </span>
+              </div>
+              <div class="probootstrap-listing-category for-sale"><span>{{property.type}}</span></div>
+              <div class="probootstrap-listing-price"><strong>Rs {{property.price}}</strong> / night</div>
+            </div>
+            <div class="probootstrap-card-extra">
+              <ul>
+                <li>
+                  Area
+                  <span>{{property.area}} sqft  </span>
+                </li>
+                <li>
+                  Beds
+                  <span>{{property.no_of_beds}}</span>
+                </li>
+                <li>
+                  Baths
+                  <span>1</span>
+                </li>
+                {% comment %} wifi {% endcomment %}
+              </ul>
+            </div>
+          </div>
+          <!-- END listing -->
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  
+
+
+  
+
+  {% endblock body %}
