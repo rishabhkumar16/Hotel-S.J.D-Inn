@@ -26,18 +26,18 @@
 
   <header role="banner" class="probootstrap-header">
     <div class="container">
-        <a href="index.html" class="probootstrap-logo">Hotel S.J.D. Inn<span>.</span></a>
+        <a href="/" class="probootstrap-logo">Hotel S.J.D. Inn<span>.</span></a>
         
         <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
         <div class="mobile-menu-overlay"></div>
 
         <nav role="navigation" class="probootstrap-nav hidden-xs">
           <ul class="probootstrap-main-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="properties.html">Properties</a></li>
-            <li><a href="agents.html">Agents</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li class=""><a href="/">Home</a></li>
+            <li {% if property_list %}class="active"{% endif %}><a href="{% url 'property:property_list'%}">Properties</a></li>
+            <li {% if staff_list %}class="active"{% endif %}><a href="{% url 'staff:staff_list'%}">Agents</a></li>
+            <li {% if about %}class="active"{% endif %}><a href="{% url 'about:about'%}">About</a></li>
+            <li {% if contactdetails %}class="active"{% endif %}><a href="{% url 'contact:send_mail'%}">Contact</a></li>
           </ul>
           <div class="extra-text visible-xs"> 
             <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
@@ -66,7 +66,7 @@
       <div class="row mb60">
         <div class="col-md-3">
           <div class="probootstrap-footer-widget">
-            <h4 class="heading">About Haus.</h4>
+            <h4 class="heading">About Hotel S.J.D. Inn</h4>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
             <p><a href="#">Read more...</a></p>
           </div> 
@@ -111,7 +111,7 @@
       <div class="row copyright">
         <div class="col-md-6">
           <div class="probootstrap-footer-widget">
-            <p>&copy; 2017 <a href="https://uicookies.com/">uiCookies:Haus</a>. Designed by <a href="https://uicookies.com/">uicookies.com</a> <br> Demo Photos from <a href="https://pixabay.com/">Pixabay</a> &amp; <a href="https://unsplash.com/">Unsplash</a></p>
+            <p>&copy; 2020 <a href="https://hotelsjdinn.com/">Hotel S.J.D. Inn</a>. Designed by <a href="https://rishabhkumar16.github.io">Rishabh Kumar</a> </p>
           </div>
         </div>
         <div class="col-md-6">
