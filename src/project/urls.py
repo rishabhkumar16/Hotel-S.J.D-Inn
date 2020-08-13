@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('home.urls' , namespace='home')),
     path('property/', include('property.urls' , namespace='property')),
     path('staff/', include('staff.urls' , namespace='staff')),
     path('about/', include('about.urls' , namespace='about')),
@@ -29,3 +30,9 @@ urlpatterns = [
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+admin.site.site_header = 'HOTEL S.J.D. INN  RESERVATION  ADMIN'
+admin.site.site_title = 'HOTEL S.J.D. INN  RESERVATION  ADMIN'
+admin.site.site_index_title = 'Welcome To Hotel S.J.D. Inn Reservation Admin'

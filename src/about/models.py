@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class About(models.Model):
-    vission = models.TextField() 
+    vision = models.TextField() 
     mission = models.TextField()
     image = models.ImageField(upload_to='about/')
 

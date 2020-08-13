@@ -48,9 +48,9 @@
   <section class="probootstrap-section">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
           <h2>Reserve this room</h2><hr>
-          <form action="" method="POST">
+          <form action="" method="POST" class="probootstrap-form mb60">
           {% csrf_token %}
              {% bootstrap_form reserve_form %}
             {% buttons %}
