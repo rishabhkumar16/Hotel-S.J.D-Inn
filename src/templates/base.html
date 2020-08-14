@@ -23,7 +23,7 @@
   <!-- START: header -->
   
   <div class="probootstrap-loader"></div>
-<div class="nav-bar">
+
   <header role="banner" class="probootstrap-header ">
     <div class="container">
         <a href="/" class="probootstrap-logo">Hotel S.J.D. Inn<span>.</span></a>
@@ -34,7 +34,7 @@
         <nav role="navigation" class="probootstrap-nav hidden-xs">
           <ul class="probootstrap-main-nav">
             <li class="{% block homeactive %} {% endblock homeactive %}"><a href="{% url 'home:home' %}">Home</a></li>
-            <li {% if property_list %}class="active"{% endif %}><a href="{% url 'property:property_list'%}">Book Rooms</a></li>
+            <li {% if property_list %}class="active"{% endif %}><a href="{% url 'property:property_list'%}">Bookings</a></li>
             <li {% if staff_list %}class="active"{% endif %}><a href="{% url 'staff:staff_list'%}">Staffs</a></li>
             <li {% if about %}class="active"{% endif %}><a href="{% url 'about:about'%}">About</a></li>
             <li {% if contactdetails %}class="active"{% endif %}><a href="{% url 'contact:send_mail'%}">Contact</a></li>
@@ -42,7 +42,7 @@
           <div class="extra-text visible-xs"> 
             <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
             <h5>Address</h5>
-            <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+            <p>	Hotel SJD Inn, Infront ETAH Club, G T Road, Etah, Uttar Pradesh-207001 </p>
             <h5>Connect</h5>
             <ul class="social-buttons">
               <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -53,7 +53,6 @@
         </nav>
     </div>
   </header>
-  </div>
   <!-- END: header -->
 
 {% block body %}
