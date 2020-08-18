@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import RegexValidator
+from datetime import datetime, date
 # Create your models here.
 room_type = (
     ('Non AC Saver (2X)', 'Non AC Saver (2X)'),
@@ -39,7 +40,11 @@ class Reserve(models.Model):
     email = models.EmailField()
     phone_regex = RegexValidator(regex=r'^\+?91?\d{9,15}$', message="Phone number must be entered in the format: '+91123456789'. Up to 12 digits allowed.")
     phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True) # validators should be a list
-    notes = models.TextField()
+    no_of_children = models.PositiveSmallIntegerField(default=0)
+    no_of_adult = models.PositiveSmallIntegerField(default=0)
+    check_in = models.DateTimeField(auto_now_add=False, auto_now=False, blank=True, null=True)
+    check_out = models.DateTimeField(blank=True)
+    
 
     def __str__(self):
         return self.name

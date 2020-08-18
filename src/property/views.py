@@ -29,3 +29,7 @@ def property_detail(request, id):
     }
 
     return render(request, template, context)
+
+def reserve(request):           
+    if request.method=='POST':
+        pass
